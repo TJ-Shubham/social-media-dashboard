@@ -39,27 +39,36 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     background-color: var(--main-bg-color);
+}
 
-    
+.nothing{
+    background-color: var(--main-top-bg-pattern-color);
+    z-index: -1;
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 2rem 5rem;
 }
 
 main{
     display: grid;
     grid-template-rows: auto auto;
     width: 70%;
-    margin: 2rem 10rem 1rem;
-    
-}
-
-header{
-    margin: 2rem 7rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
-    margin: 2rem 10rem 1rem;
-
+    margin: 2rem 5rem;
 }
 
 h1{
@@ -82,6 +91,8 @@ h1{
     align-items: center;
     margin-right: 12px;
 }
+
+
 
 .switch {
     position: relative;
@@ -144,7 +155,7 @@ input:checked + .slider:before {
     border-radius: 34px;
 }
 
-hr{
+.dashboard-line{
     display: none;
 }
 
@@ -160,7 +171,7 @@ h1, h2, .followers, .daily-count{
 
 .profile{
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     gap: 1.3rem;
 }
@@ -172,7 +183,38 @@ h1, h2, .followers, .daily-count{
     flex-direction: column;
     align-items: center;
     background-color: var(--card-bg-color);
+    cursor: pointer;
+    border-radius: 7px;
 }
+
+.social:hover, .daily-overview:hover{
+    filter: brightness(130%);
+}
+
+.social-color{
+    height: .25rem;
+    width: 100%;
+    border: none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.fb{
+    background-color: var(--Facebook);
+}
+
+.tweet{
+    background-color: var(--Twitter);
+}
+
+.insta{
+    background: var(--Instagram);
+}
+
+.yt{
+    background-color: var(--YouTube);
+}
+
 
 .social-id{
     margin: 30px 0 10px;
@@ -231,17 +273,15 @@ h2{
 
 .total-overview{
   display: grid;
-  grid-template-columns: repeat(4, 250px);
-  gap: 1.3rem;
-  
-
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 .daily-overview{
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
     background-color: var(--card-bg-color);
     padding: 1rem;
+    border-radius: 7px;
+    cursor: pointer;
 }
 
 .daily{
@@ -290,4 +330,53 @@ h2{
 
 
 
+/* responsive 480px max width */
 
+@media (max-width:480px){
+
+    header{
+        flex-direction: column;
+        width: 90%; 
+        gap: 2rem;
+    }
+
+    .dashboard{
+        width: 100%;
+    }
+
+    .dashboard-line{
+        display: block;
+        width: 100%;
+        background-color: var(--card-text-color);
+        border: none;
+        height: .03rem;
+    }
+
+    .toggle{
+        width: 100%;
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    main{
+        width: 90%;
+    }
+
+    .profile{
+        flex-direction: column;
+    }
+
+    .social{
+        width: 100%;
+    }
+
+    .total-overview{
+        grid-template-columns: 1fr;
+        width: 100%;
+
+    }
+
+
+
+
+}
