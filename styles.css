@@ -17,7 +17,6 @@
     --light-toggle-theme: hsl(230, 22%, 74%);
 
     /* Neutral Dark Theme */
-
     --main-bg-color: hsl(230, 17%, 14%);
     --main-top-bg-pattern-color: hsl(232, 19%, 15%);
     --card-bg-color: hsl(228, 28%, 20%);
@@ -25,11 +24,11 @@
     --white: hsl(0, 0%, 100%);
 
     /* Neutral Light theme */
-
     --light-main-top-bg-pattern-color: hsl(225, 100%, 98%);
     --light-card-bg-color: hsl(227, 47%, 96%);
     --light-card-text-color: hsl(228, 12%, 44%);
     --light-card-main-text-color: hsl(230, 17%, 14%);
+    
 }
 
 *{
@@ -116,7 +115,6 @@ h1{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -330,6 +328,39 @@ h2{
 
 
 
+
+/* light theme */
+
+.light{
+    background-color: var(--white);
+    color: var(--light-card-main-text-color-text-color);
+}
+
+.background-light{
+    background-color: var(--light-main-top-bg-pattern-color);
+}
+
+.card-light{
+    background-color: var(--light-card-bg-color);
+}
+
+.card-light:hover{
+    filter: brightness(90%) grayscale(0);
+    transition: linear .14s;
+}
+
+.change-text-light{
+    color: var(--light-card-main-text-color);
+    font-weight: 700;
+}
+
+
+/* attribution */
+
+.attribution{
+    display: none;
+}
+
 /* responsive 480px max width */
 
 @media (max-width:480px){
@@ -374,6 +405,21 @@ h2{
         grid-template-columns: 1fr;
         width: 100%;
 
+    }
+
+    .attribution{
+        display: block;
+        margin: 2rem 0 0 0;
+        padding: 0;
+        text-align: center;
+        font-size: .8rem;
+        color: var(--light-card-text-color);
+    }
+
+    .attribution a{
+        text-decoration: none;
+        color: var(--card-text-color);
+        font-weight: 700;
     }
 
 
