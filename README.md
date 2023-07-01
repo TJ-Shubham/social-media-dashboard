@@ -27,7 +27,7 @@ This is a solution to the [Social media dashboard with theme switcher challenge 
 ### Links
 
 - Solution URL:  https://github.com/TJ-Shubham/social-media-dashboard
-- Live Site URL: 
+- Live Site URL: https://tj-shubham.github.io/social-media-dashboard/
 
 ## My process
 
